@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>SIAB Recycle - Garuda Hacks 2.0</title>
+
+    <!-- Boxicon -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+    </head>
+
+    <body onload=runClock()>
+    <!-- Navbar here -->
+
+        <nav class="navbar navbar-dark navbar-expand sticky-top navigation-clean-button shadow p-3 mb-5" style="background-color:#6599ae;padding-top:20px;padding-bottom:20px">
+            <div class="container">
+            <div class="col">
+                <a class="navbar-brand" href="#" style="color: rgb(255,255,255);font-size: 14px;font-family: 'Open Sans', sans-serif;"><Strong>SIAB Recycle</Strong></a>
+                <button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navcol-1">
+                    <ul class="nav navbar-nav mr-auto"></ul>
+                </div>
+            </div>
+
+            <div class="col" style="text-align:right">
+                <a id="datetime" style="color: rgb(255,255,255);font-size: 14px"></a>
+            </div>
+            
+            </div>
+
+        </nav>
+
+    
+    <!-- Content here -->
+        <!-- Title Container -->
+        <section id="title-section" class="d-flex flex-column justify-content-center">
+
+            <div class="container" style="text-align:center; padding-top:0px; padding-bottom:30px">
+
+                <div class="row align-items-center ">
+                    <div class="col">
+                        <div class="card border-0 shadow" style="background-color:#ffffff">
+                            <div class="row g-0">
+                                <div class="col" style="font-size:24px; text-align:left; padding-left:20px">
+                                    <div class="row" style="padding-top:15px">
+                                        <p><Strong>Dashboard </Strong></p>                    
+                                    </div>            
+                                </div>
+
+                                <div class="col" style="text-align:right; padding-right:20px;">
+                                    <div class="row" style="padding-top:20px;font-size:16px;margin-bottom:-12px">                                
+                                        <p>SIAB Garuda Hacks 2.0</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Section -->
+        <section id="data-section" class="d-flex flex-column justify-content-center">
+            <div class="container" style="align-center">
+
+                <div class="row align-items-center" style="padding-bottom:20px">
+                    <div class="col" style="text-align:center">
+                        <div class="card mb-3 border-0" style="background-color:#466b79">
+                        <div class="row g-0">
+                            <div class="col-md-4" style=" padding-top:25px; color:#ffffff" id="logo_tab">
+
+                            </div>
+                            <div class="col-md-8">
+                            <div class="card-body" style="color:#ffffff" id="process_tab">
+
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+            <!-- Data Sensor -->
+            <div class="container" style="align-center">
+
+                <div class="row align-items-center">
+                    <div class="col">
+                        <div class="row g-2" style="margin-left:-14px; margin-right:-14px">
+                            <p style="margin:0px; padding:0px"><Strong>Sensor's Data</Strong></p>
+                            <div class="card mb-3 rounded-0 border-0" style="background-color:#93C5FD; width:4rem; min-height:8px">
+                            </div>
+                        </div>
+                    </div>
+                <div>
+
+                <div class="row align-items-center">
+
+                    <!--Quality of input water-->
+                    <div class="col">
+                        <div class="row" style="text-align:center">
+                        <p><Strong> Input Water Quality </Strong></p>
+                        </div>
+
+                        <div class="row">
+                        <div class="col">
+                            <div class="row row-cols-md-3 g-4" style="--bs-gutter-y:0.5rem">
+
+                                <div class="col" style="text-align:center">
+                                    <div class="card h-80 shadow-sm bg-body rounded border-0">
+                                        <div class="card-body rounded" style="background-color:#ECF5F5">
+                                            <span style="font-size:10px" id="tds_input_info">
+                                            </span>
+                                            <h5 class="card-title" style="font-size:14px; color:#6599AE; font-weight:700">TDS (ppm)</h5>
+                                            <p class="card-text" style="font-size:24px; font-weight:600" id="tds_input_tab"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col" style="text-align:center">
+                                    <div class="card h-80 shadow-sm bg-body rounded border-0">
+                                        <div class="card-body rounded" style="background-color:#ECF5F5">
+                                            <span style="font-size:10px" id="turb_input_info">
+                                            </span>
+                                            <h5 class="card-title" style="font-size:14px; color:#6599AE; font-weight:700">Turbidity (NTU)</h5>
+                                            <p class="card-text" style="font-size:24px; font-weight:600" id="turb_input_tab"></p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col" style="text-align:center">
+                                    <div class="card h-80 shadow-sm bg-body rounded border-0">
+                                        <div class="card-body rounded" style="background-color:#ECF5F5">
+                                            <h5 class="card-title" style="font-size:14px; color:#6599AE; font-weight:700">Volume (L)</h5>
+                                            <p class="card-text" style="font-size:24px; font-weight:600;" id="volume_input_tab"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <!-- Quality of output water-->
+                    <div class="col">
+                        <div class="row" style="text-align:center">
+                        <p><Strong> Output Water Quality </Strong></p>
+                        </div>
+
+                        <div class="row">
+                        <div class="col">
+                            <div class="row row-cols-md-3 g-4" style="--bs-gutter-y:0.5rem">
+
+                                <div class="col" style="text-align:center">
+                                    <div class="card h-80 shadow-sm bg-body rounded border-0">
+                                        <div class="card-body rounded" style="background-color:#ECF5F5">
+                                            <span style="font-size:10px" id="tds_output_info">
+                                            </span>
+                                            <h5 class="card-title" style="font-size:14px; color:#6599AE; font-weight:700">TDS (ppm)</h5>
+                                            <p class="card-text" style="font-size:24px; font-weight:600" id="tds_output_tab"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col" style="text-align:center">
+                                    <div class="card h-80 shadow-sm bg-body rounded border-0">
+                                        <div class="card-body rounded" style="background-color:#ECF5F5">
+                                            <span style="font-size:10px" id="turb_output_info">
+                                            </span>
+                                            <h5 class="card-title" style="font-size:14px; color:#6599AE; font-weight:700">Turbidity (NTU)</h5>
+                                            <p class="card-text" style="font-size:24px; font-weight:600" id="turb_output_tab"></p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col" style="text-align:center">
+                                    <div class="card h-80 shadow-sm bg-body rounded border-0">
+                                        <div class="card-body rounded" style="background-color:#ECF5F5">
+                                            <h5 class="card-title" style="font-size:14px; color:#6599AE; font-weight:700">Volume (L)</h5>
+                                            <p class="card-text" style="font-size:24px; font-weight:600;" id="volume_output_tab"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="row align-items-center" style="padding-top:20px">
+                    <div class="row" style="text-align:center; padding-top:20px">
+                    <p><Strong> Other Parameters of Water Quality </Strong></p>
+                    </div>
+
+                    <div class="row">
+                    <div class="col">
+                        <div class="row row-cols-md-2 g-4" style="--bs-gutter-y:0.5rem">
+
+                            <div class="col" style="text-align:center;">
+                                <div class="card h-80 shadow-sm bg-body rounded border-0">
+                                    <div class="card-body rounded" style="background-color:#ECF5F5">
+                                        <h5 class="card-title" style="font-size:14px; color:#6599AE; font-weight:700">Suhu (C)</h5>
+                                        <p class="card-text" style="font-size:24px; font-weight:600" id="suhu_tab"></p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col" style="text-align:center">
+                                <div class="card h-80 shadow-sm bg-body rounded border-0">
+                                    <div class="card-body rounded" style="background-color:#ECF5F5">
+                                        <span class="position-absolute top-100 start-50 translate-middle badge rounded-pill" style="font-size:10px" id="ph_info">
+                                        </span>
+                                        <h5 class="card-title" style="font-size:14px; color:#6599AE; font-weight:700">pH</h5>
+                                        <p class="card-text" id="ph_tab" style="font-size:24px; font-weight:600"> </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+                
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <section id="end-section" class="d-flex flex-column justify-content-center" style="padding-top:50px">
+            <div class="container" style="align-center">
+                <div class="row" style="text-align:center; font-size:10px">
+                    <div class="column">
+                        <p><Strong>SIAB Team - GARUDA HACKS 2.0 @2021</Strong></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    <!-- JS here -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+        <!--
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.2.0/aos.js"></script>
+        -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+        <script src="/assets/js/get_time.js"></script>
+
+
+    <!-- Firebase SDK v9-->
+
+        <script type="module" src="/assets/js/read_firebase_sensor.js"></script>
+
+    </body>
+
+</html>
