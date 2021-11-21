@@ -154,9 +154,9 @@
             if(processStep == 0)
             {
                 document.getElementById("process_tab").innerHTML =`
-                    <h4 class="card-title" style="margin-bottom:1rem"><Strong>No Water</Strong></h4>
-                    <p class="card-text" style="margin-bottom:0rem">There is no water in tank now</p>
-                    <p class="card-text" style="color:#ffffff"><small>Input your water to check the water quality</small></p>
+                    <h4 class="card-title" style="margin-bottom:1rem"><Strong>Wait to Start</Strong></h4>
+                    <p class="card-text" style="margin-bottom:0rem">You can start now</p>
+                    <p class="card-text" style="color:#ffffff"><small>Input your water into tank</small></p>
                 `;
                 document.getElementById("logo_tab").innerHTML =`
                     <i class='bx bxs-error' style="font-size:50px;"></i>
