@@ -92,6 +92,7 @@ void loop()
   tdsOutputValue = parsingData(temporaryI2CData, ',', 1).toInt();
   temperatureValue = parsingData(temporaryI2CData, ',',2).toFloat();
   volOutputValue = parsingData(temporaryI2CData, ',', 3).toFloat();
+  Serial.println(temporaryI2CData);
 
   //reset temporary i2c
   temporaryI2CData="";
@@ -109,6 +110,8 @@ void loop()
   turbInputValue = parsingData(temporaryI2CData, ',', 2).toFloat();
   turbOutputValue = parsingData(temporaryI2CData, ',', 3).toFloat();
   processValue = parsingData(temporaryI2CData, ',', 4).toInt();
+  Serial.println(temporaryI2CData);
+
   //reset temporary i2c
   temporaryI2CData="";
   // Upload to firebase

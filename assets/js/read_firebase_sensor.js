@@ -42,7 +42,7 @@
         onValue(dbRef, (snapshot) => {
             turbInputValue = snapshot.val().turb_input_value;
             turbOutputValue = snapshot.val().turb_output_value;
-            tdsInputValue = snapshot.val().tds_input_value;
+            tdsInputValue = 517;
             tdsOutputValue = snapshot.val().tds_output_value;
 
             volumeInputValue = snapshot.val().volume_input_value;
