@@ -46,7 +46,15 @@
             tdsOutputValue = snapshot.val().tds_output_value;
 
             volumeInputValue = snapshot.val().volume_input_value;
+            if(volumeInputValue < 0)
+            {
+                volumeInputValue = 0;
+            }
             volumeOutputValue = snapshot.val().volume_output_value;
+            if(volumeOutputValue < 0)
+            {
+                volumeOutputValue = 0;
+            }
 
             phValue = snapshot.val().ph_value;
             suhuValue = snapshot.val().suhu_value;
