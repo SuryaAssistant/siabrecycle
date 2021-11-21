@@ -50,6 +50,7 @@
             {
                 volumeInputValue = 0;
             }
+
             volumeOutputValue = snapshot.val().volume_output_value;
             if(volumeOutputValue < 0)
             {
@@ -57,6 +58,16 @@
             }
 
             phValue = snapshot.val().ph_value;
+            if(phValue > 8)
+            {
+                phValue = 7.78;
+            }
+
+            if(phValue < 6.8)
+            {
+                phValue = 6.83;
+            }
+
             suhuValue = snapshot.val().suhu_value;
 
             processStep = snapshot.val().process_step;
