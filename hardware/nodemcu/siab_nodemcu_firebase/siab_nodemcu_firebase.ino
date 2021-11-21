@@ -85,11 +85,11 @@ void loop()
 {
 
   // get data from slave address 8
-  Wire.requestFrom(8, 19);
+  Wire.requestFrom(8, 11);
   readI2C();
   // Parsing data
-  phValue = parsingData(temporaryI2CData, ',', 1).toFloat();
-  temperatureValue = parsingData(temporaryI2CData, ',', 3).toFloat();
+  phValue = parsingData(temporaryI2CData, ',', 0).toFloat();
+  temperatureValue = parsingData(temporaryI2CData, ',', 1).toFloat();
   //reset temporary i2c
   temporaryI2CData="";
   // Upload to firebase
@@ -97,16 +97,16 @@ void loop()
   Firebase.setFloat(suhuPath, temperatureValue);
 
   // get data from slave address 9
-  Wire.requestFrom(9, 54);
+  Wire.requestFrom(9, 36);
   readI2C();
   // Parsing data
-  volInputValue = parsingData(temporaryI2CData, ',', 1).toFloat();
-  volOutputValue = parsingData(temporaryI2CData, ',', 2).toFloat();
-  tdsInputValue = parsingData(temporaryI2CData, ',', 4).toInt();
-  tdsOutputValue = parsingData(temporaryI2CData, ',', 5).toInt();
-  turbInputValue = parsingData(temporaryI2CData, ',', 7).toFloat();
-  turbOutputValue = parsingData(temporaryI2CData, ',', 8).toFloat();
-  processValue = parsingData(temporaryI2CData, ',', 10).toInt();
+  volInputValue = parsingData(temporaryI2CData, ',', 0).toFloat();
+  volOutputValue = parsingData(temporaryI2CData, ',', 1).toFloat();
+  tdsInputValue = parsingData(temporaryI2CData, ',', 2).toInt();
+  tdsOutputValue = parsingData(temporaryI2CData, ',', 3).toInt();
+  turbInputValue = parsingData(temporaryI2CData, ',', 4).toFloat();
+  turbOutputValue = parsingData(temporaryI2CData, ',', 5).toFloat();
+  processValue = parsingData(temporaryI2CData, ',', 6).toInt();
   //reset temporary i2c
   temporaryI2CData="";
   // Upload to firebase
